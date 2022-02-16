@@ -13,10 +13,6 @@ library SignatureChecker {
         bytes memory _signature
     ) pure internal returns (bool) {
         (address recoveredAddress, ECDSA.RecoverError recoverError) = ECDSA.tryRecover(_hash, _signature);
-        if (recoverError == ECDSA.RecoverError.NoError) {
-            return recoveredAddress == _address;
-        } else {
-            return false;
-        }
+        return recoverError == ECDSA.RecoverError.NoError && recoveredAddress == _address;
     }
 }
