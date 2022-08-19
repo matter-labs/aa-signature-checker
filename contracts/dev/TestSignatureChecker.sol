@@ -9,7 +9,7 @@ contract TestSignatureChecker {
         address _address,
         bytes32 _hash,
         bytes memory _signature
-    ) public pure returns (bool) {
-        return _address.checkSignature(_hash, _signature);
+    ) public view returns (bool) {
+        return _address.isValidSignatureNow(_hash, _signature);
     }
 }
