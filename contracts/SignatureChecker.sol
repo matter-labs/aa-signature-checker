@@ -1,7 +1,7 @@
 pragma solidity ^0.8.0;
 
-import "./openzeppelin/ECDSA.sol";
-import "./openzeppelin/IERC1271.sol";
+import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+import "@openzeppelin/contracts/interfaces/IERC1271.sol";
 
 library SignatureChecker {
     /** 
